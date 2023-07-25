@@ -1,0 +1,30 @@
+.body_container {
+  width: 100%;
+  height: 100vh !important;
+  background: url('../src/assets/imgs/movie_bg.jpg');
+  background-size: 100%;
+  position: relative;
+}
+
+.header_container {
+  position: absolute;
+  margin: auto;
+  top: 140px;
+  /* bottom: 0; */
+  left: 100px;
+  height: max-content;
+  width: 620px;
+}
+
+.header_text {
+  font-size: 3rem;
+  font-family: Raleway_Regular;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header_paragraph {
+  color: #fff;
+  font-family: Raleway_Regular;
+  font-weight: 500;
+}

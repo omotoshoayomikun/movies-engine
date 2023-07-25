@@ -1,0 +1,39 @@
+.btn {
+    background: linear-gradient(94.06deg, rgb(253, 62, 28) -1.21%, rgb(253, 81, 51) 58.66%, tomato 116.84%);
+    padding: 15px 10px;
+    border: none;
+    font-family: Raleway_Regular;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .13);
+    width: 100%;
+}
+
+.btn::after {
+    background: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 105.09px;
+    left: 115px;
+    position: absolute;
+    top: 20px;
+    -webkit-transform: rotate(23.72deg);
+    transform: rotate(23.72deg);
+    width: 68px;
+
+}
+
+.outline_btn {
+    padding: 13px 10px;
+    font-family: Raleway_Regular;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .13);
+    background-color: transparent;
+    border: 2px solid rgb(253, 62, 28);
+    width: 100%;
+}
