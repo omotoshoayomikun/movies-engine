@@ -1,24 +1,28 @@
 .model_bg {
     position: fixed;
+    left: 0;
+    top: 0;
     width: inherit;
     height: 100%;
-    background-color: #0000007e;
+    background-color: #000000ac;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
+
 }
 
 .model_front {
     width: 100%;
     height: 100%;
     padding: 50px 10px;
-    overflow-y: scroll;
+
 }
 
 .model_body {
     max-width: 630px;
-    width: 100%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     height: auto;
@@ -50,7 +54,11 @@
 }
 
 .card:hover {
-    background: linear-gradient(94.06deg, rgb(253, 62, 28) -1.21%, rgb(253, 81, 51) 58.66%, tomato 116.84%);
+    background: linear-gradient(180deg, rgb(253, 62, 28) -1.21%, rgb(253, 81, 51) 58.66%, tomato 116.84%);
+}
+
+.card_bg {
+    background: linear-gradient(94.06deg, rgb(253, 62, 28) -1.21%, rgb(253, 81, 51) 58.66%, tomato 116.84%) !important;
 }
 
 .card>img {
@@ -188,18 +196,20 @@
 .detail_body {
     background-color: #000000d8;
     padding: 20px;
+    height: auto;
 }
 
 .flexi_dir {
     display: flex;
+    flex-direction: row;
     gap: 10px;
 }
 
 
 .detail_img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
+    height: 300px;
+    object-fit: contain;
 }
 
 .Details_text {
@@ -216,4 +226,38 @@
 .time {
     font-family: Dancing_Script_Regular, serif;
     font-size: 15px;
+}
+
+.view_image {
+    width: 100%;
+    height: 350px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .qt1_dd {
+        font-size: 20px;
+    }
+
+    .checkmark_cont:hover {
+        background: none;
+    }
+
+    .flexi_dir {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+
+}
+
+@media screen and (max-width: 399px) {
+    .disp_join {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
 }

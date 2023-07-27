@@ -37,3 +37,11 @@
     border: 2px solid rgb(253, 62, 28);
     width: 100%;
 }
+
+.cancel_btn {
+    width: 35px;
+    height: 35px;
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}

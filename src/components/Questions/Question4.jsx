@@ -3,7 +3,7 @@ import styles from '../../styles/Question.module.css';
 import { Btn, OutlineBtn } from '../Forms/Btn';
 import { Old_List } from '../../utilis/Data';
 
-function Question4() {
+function Question4(props) {
     return (
         <>
             <div className={styles.model_bg}>
@@ -29,10 +29,10 @@ function Question4() {
                         </div>
                         <div className={styles.side_dd}>
                             <div className={styles.side_dd1}>
-                                <OutlineBtn text='Back' style={{ padding: '9px 45px' }} />
+                                <OutlineBtn text='Back' style={{ padding: '9px 45px' }} onClick={() => props.setIndex((index) => index - 1)} />
                             </div>
                             <div className={styles.side_dd2}>
-                                <Btn text='Next' style={{ padding: '11px 45px' }} />
+                                <Btn text='Next' style={{ padding: '11px 45px' }} onClick={() => props.setIndex((index) => index + 1)} />
                             </div>
                         </div>
                     </div>

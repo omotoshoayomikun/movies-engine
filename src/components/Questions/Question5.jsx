@@ -3,12 +3,27 @@ import styles from '../../styles/Question.module.css';
 import { Age_Appropriateness_List, MPAA_List } from '../../utilis/Data';
 import { Btn, OutlineBtn } from '../Forms/Btn';
 
-function Question5() {
+function Question5(props) {
 
     const [display, setDisplay] = useState({
         age: true,
         old: false
     })
+
+    const handleAppropriateness = (list) => {
+
+    }
+
+    const handleClick = () => {
+        props.setIndex(index => index + 1)
+        // const Yes = "Yes, I would like to choose the ratings that I'm okay with."
+        // if (list === Yes) {
+        //     setDisplay({
+        //         age: false,
+        //         old: true
+        //     })
+        // }
+    }
 
     return (
         <>
@@ -22,7 +37,7 @@ function Question5() {
                                     <ul className={`${styles.check_container}`}>
                                         {
                                             Age_Appropriateness_List.map((list, i) => (
-                                                <li key={i} className={`${styles.check}`}>
+                                                <li key={i} className={`${styles.check}`} onClick={() => handleAppropriateness(list)}>
                                                     <label className={styles.checking}>
                                                         <input type="radio" name="age" id="" />
                                                         <span className={styles.checkmark_cont}>
@@ -37,10 +52,10 @@ function Question5() {
                                 </div>
                                 <div className={styles.side_dd}>
                                     <div className={styles.side_dd1}>
-                                        <OutlineBtn text='Back' style={{ padding: '9px 45px' }} />
+                                        <OutlineBtn text='Back' style={{ padding: '9px 45px' }} onClick={() => props.setIndex(index => index - 1)} />
                                     </div>
                                     <div className={styles.side_dd2}>
-                                        <Btn text='Next' style={{ padding: '11px 45px' }} />
+                                        <Btn text='Next' style={{ padding: '11px 45px' }} onClick={handleClick} />
                                     </div>
                                 </div>
                             </div>
