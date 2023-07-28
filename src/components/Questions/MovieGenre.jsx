@@ -11,15 +11,16 @@ function MovieGenre(props) {
     const genres = useSelector((state) => state.movies.genres)
     const selectedGenres = useSelector((state) => state.genres);
 
-    console.log(selectGenres)
-
+    
     const handleGenreSelection = (genreId) => {
         const updatedSelectedGenres = selectedGenres.includes(genreId)
-            ? selectedGenres.filter((id) => id !== genreId)
-            : [...selectedGenres, genreId]
+        ? selectedGenres.filter((id) => id !== genreId)
+        : [...selectedGenres, genreId]
         dispatch(selectGenres(updatedSelectedGenres));
     }
+    
 
+    const check = useSelector((state) => state.genres)
 
     return (
         <>
@@ -53,11 +54,11 @@ function MovieGenre(props) {
                                 <OutlineBtn text='Back' style={{ padding: '9px 45px' }} onClick={() => props.setIndex((index) => index - 1)} />
                             </div>
                             {
-                                // selectedGenres != [] && (
+                                check.length > 0 && (
                                     <div className={styles.side_dd2}>
                                         <Btn text='Next' style={{ padding: '11px 45px' }} onClick={() => props.setIndex((index) => index + 1)} />
                                     </div>
-                                // )
+                                )
                             }
                         </div>
                     </div>

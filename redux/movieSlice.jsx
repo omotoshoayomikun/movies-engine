@@ -16,14 +16,16 @@ export const fetchGenres = createAsyncThunk('movies/fetchGenres', async () => {
     const response = await axios.get(
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
     );
+
+
     return response.data.genres;
 });
 
 const movieSlice = createSlice({
     name: 'movies',
     initialState: {
-        data: [],
-        genres: [],
+        data: JSON.parse(localStorage.getItem('moviesData')) || [],
+        genres: JSON.parse(localStorage.getItem('moviesData')) || [],
         face: '',
         loading: false,
         error: null
@@ -46,7 +48,8 @@ const movieSlice = createSlice({
 
             .addCase(fetchMovies.fulfilled, (state, action) => {
                 state.loading = false;
-                state.data = action.payload
+                state.data = action.payload;
+                localStorage.setItem('moviesData', JSON.stringify(action.payload))
             })
 
             .addCase(fetchMovies.rejected, (state, action) => {
@@ -56,6 +59,7 @@ const movieSlice = createSlice({
 
             .addCase(fetchGenres.fulfilled, (state, action) => {
                 state.genres = action.payload
+                localStorage.setItem('genresData', JSON.stringify(action.payload))
             })
     }
 })
@@ -68,5 +72,5 @@ export const selectMoviesByGenres = (state) => {
 };
 
 
-export const { addFace, reset} = movieSlice.actions
+export const { addFace, reset } = movieSlice.actions
 export default movieSlice.reducer
