@@ -35,18 +35,20 @@ function Details(props) {
                     <div className={styles.detail_body}>
                         {randomFilteredMovies.map((movie, i) => (
                             <div key={i} className={styles.flexi_dir}>
-                                <div className="flex-[2]" onClick={() => setShowView(true)}>
-                                    <h2 className={styles.Details_text}>{movie.title}</h2>
-                                    <p className={styles.detail_p}>{movie.overview}
-                                    </p>
-                                    <small className={`${styles.time} flex gap-1 mt-3`}>
-                                        <img src={Calender_Icon} alt="" style={{ width: '20px', height: '20px' }} />
-                                        {movie.release_date}
-                                    </small>
-                                    <div className="mt-4">
+                                <div className="flex-[2] flex flex-col justify-between" onClick={() => setShowView(true)}>
+                                    <div>
+                                        <h2 className={styles.Details_text}>{movie.title}</h2>
+                                        <p className={styles.detail_p}>{movie.overview}
+                                        </p>
+                                        <small className={`${styles.time} flex gap-1 mt-3`}>
+                                            <img src={Calender_Icon} alt="" style={{ width: '20px', height: '20px' }} />
+                                            {movie.release_date}
+                                        </small>
+                                    </div>
+                                    <div className="mt-4" style={{ position: 'relative', bottom: '0px' }}>
                                         <OutlineBtn
                                             text='View Details'
-                                            style={{ padding: '9px 10px', }}
+                                            style={{ padding: '9px 10px', width: 'max-content' }}
                                             onClick={() => setShowView(true)}
                                         />
                                     </div>

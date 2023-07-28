@@ -25,7 +25,7 @@ function MovieGenre(props) {
     return (
         <>
             <div className={styles.model_bg}>
-                <div className={styles.model_front}>
+                {/* <div className={styles.model_front}> */}
                     <div className={`${styles.model_body}`}>
                         <div className={styles.qt1_dd}>3. Please choose any genre you're interested in.</div>
                         <div className={`${styles.card_container}`}>
@@ -62,7 +62,7 @@ function MovieGenre(props) {
                             }
                         </div>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </>
     )

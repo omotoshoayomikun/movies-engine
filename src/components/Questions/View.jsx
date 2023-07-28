@@ -10,7 +10,7 @@ function View({ data, setShowView }) {
     return (
         <>
             <div className={`${styles.model_bg}`}>
-                <div className={styles.cancel_container}>
+                <div className={`${styles.cancel_container} ml-auto mr-auto w-max`}>
                     <CancelBtn onClick={() => setShowView(false)} />
                 </div>
                 <div className={styles.model_body}>
@@ -20,7 +20,7 @@ function View({ data, setShowView }) {
                             <h2 className={styles.Details_text}>{data.title}</h2>
                             <p className={styles.detail_p}>{data.overview}
                             </p>
-                            <div className="flex justify-between">
+                            <div className={styles.vvlc}>
                                 <small className={`${styles.time} flex gap-1 mt-3`}>
                                     <img src={Calender_Icon} alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
                                     {data.release_date}
@@ -34,7 +34,7 @@ function View({ data, setShowView }) {
                                     {data.vote_average}
                                 </small>
                                 <small className={`${styles.time} flex gap-1 mt-3`}>
-                                    POPULARITY:  
+                                    <span className='mr-3'>POPULARITY:</span>  
                                     {data.popularity}
                                 </small>
                             </div>
